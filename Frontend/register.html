@@ -1,141 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
 
-        #content_container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
-        }
+      #content_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+      }
 
+      #form_container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      #form_header_container h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      input[type='email'],
+      input[type='password'] {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        background-color: #f9f9f9;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type='email']:focus,
+      input[type='password']:focus {
+        background-color: #e8f0fe;
+        outline: none;
+      }
+
+      #button_container {
+        margin-top: 15px;
+      }
+
+      #button_container button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #button_container button:hover {
+        background-color: #0056b3;
+      }
+
+      p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      p a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      p a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 600px) {
         #form_container {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
+          padding: 20px;
         }
 
         #form_header_container h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: bold;
+          font-size: 20px;
         }
 
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-            background-color: #f9f9f9;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            background-color: #e8f0fe;
-            outline: none;
-        }
-
-        #button_container {
-            margin-top: 15px;
-        }
-
+        input[type='email'],
+        input[type='password'],
         #button_container button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+          font-size: 14px;
+          padding: 10px;
         }
-
-        #button_container button:hover {
-            background-color: #0056b3;
-        }
-
-        p {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        p a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        p a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 600px) {
-            #form_container {
-                padding: 20px;
-            }
-
-            #form_header_container h2 {
-                font-size: 20px;
-            }
-
-            input[type="email"],
-            input[type="password"],
-            #button_container button {
-                font-size: 14px;
-                padding: 10px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="content_container">
-        <div id="form_container">
-            <div id="form_header_container">
-                <h2>Register</h2>
-            </div>
-            <div id="form_content_container">
-                <input type="name" id="name" placeholder="Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <div id="button_container">
-                    <button onclick="register()">Register</button>
-                </div>
-                <p>Already have an account? <a href="login.html">Login here</a></p>
-            </div>
+      <div id="form_container">
+        <div id="form_header_container">
+          <h2>Register</h2>
         </div>
+        <div id="form_content_container">
+          <input type="name" id="name" placeholder="Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required />
+          <div id="button_container">
+            <button onclick="register()">Register</button>
+          </div>
+          <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+      </div>
     </div>
 
     <!-- Firebase JS SDK -->
@@ -143,61 +149,58 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 
     <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDZO-2yUHziwbOUpxPqNqjR2n55H89HqNM",
-            authDomain: "arrealworld-51cbb.firebaseapp.com",
-            projectId: "arrealworld-51cbb",
-            storageBucket: "arrealworld-51cbb.appspot.com",
-            messagingSenderId: "1033126650105",
-            appId: "1:1033126650105:web:b37f448a18f2995a19c228"
-        };
+      // Firebase configuration
+      const firebaseConfig = {
+        apiKey: 'AIzaSyDZO-2yUHziwbOUpxPqNqjR2n55H89HqNM',
+        authDomain: 'arrealworld-51cbb.firebaseapp.com',
+        projectId: 'arrealworld-51cbb',
+        storageBucket: 'arrealworld-51cbb.appspot.com',
+        messagingSenderId: '1033126650105',
+        appId: '1:1033126650105:web:b37f448a18f2995a19c228',
+      };
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
-        async function register() {
+      async function register() {
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
         // Validate inputs
         if (!name || !email || !password) {
-            alert('All fields are required!');
-            return;
+          alert('All fields are required!');
+          return;
         }
 
         try {
-            // Send data to server
-            const response = await fetch('http://localhost:3000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, password })
-            });
+          // Send data to server
+          const response = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, password }),
+          });
 
-            const result = await response.json();
-            if (response.ok) {
-                alert('Registration successful!');
-            } else {
-                alert(`Error: ${result.message}`);
-            }
+          const result = await response.json();
+          if (response.ok) {
+            alert('Registration successful!');
+          } else {
+            alert(`Error: ${result.message}`);
+          }
         } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
         }
-    }
+      }
     </script>
-</body>
+  </body>
 </html>
 
-
-
-
-apiKey: "AIzaSyDZO-2yUHziwbOUpxPqNqjR2n55H89HqNM",
+<!-- apiKey: "AIzaSyDZO-2yUHziwbOUpxPqNqjR2n55H89HqNM",
 authDomain: "arrealworld-51cbb.firebaseapp.com",
 projectId: "arrealworld-51cbb",
 storageBucket: "arrealworld-51cbb.appspot.com",
 messagingSenderId: "1033126650105",
-appId: "1:1033126650105:web:b37f448a18f2995a19c228"
+appId: "1:1033126650105:web:b37f448a18f2995a19c228" -->
