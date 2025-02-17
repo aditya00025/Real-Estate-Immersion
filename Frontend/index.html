@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360Realty - Future of Real Estate</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d0b12;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #00FFA3, #03E1FF, #DC1FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(0,255,163,0.1), rgba(3,225,255,0.1), transparent);
+            background-image: url("https://jep-asset.akamaized.net/cms/assets/jioplatforms/5g/ar-vr-hero-desk.webp");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+       
+    .blur-to-visible {
+        filter: blur(20px);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: filter 0.8s ease-out, opacity 0.8s ease-out, transform 1.3s ease-out;
+    }
+
+    .blur-to-visible.active {
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+        
+    </style>
+</head>
+<body>
+    <nav class="fixed w-full z-50 bg-[#02041A]/80 backdrop-blur-lg border-b border-white/10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">Real Estate Immersion</div>
+            <div class="hidden md:flex space-x-6">
+            </div>
+            <button class="bg-gradient-to-r from-[#00FFA3] to-[#03E1FF] text-black px-6 py-2 rounded-full font-medium hover:opacity-90 transition hidden md:block">
+                Launch App
+            </button>
+
+            <button type="button">Become a Seller</button>
+            <button class="md:hidden text-white text-2xl">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </nav>
+
+   
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient min-h-screen pt-24 flex items-center">
+            <div class="container mx-auto px-4 text-center md:text-left">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            Experience Real Estate in
+                            <span class="gradient-text">Virtual Reality</span>
+                        </h1>
+                        <p class="text-lg text-white/80 mb-8">
+                            Revolutionizing property viewings with immersive AR/VR technology. Tour properties from anywhere in the world with photorealistic 3D experiences.
+                        </p>
+                        <button class="bg-gradient-to-r from-[#00FFA3] to-[#03E1FF] text-black px-8 py-3 rounded-full font-medium hover:opacity-90 transition">
+                            Start Exploring
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="py-12 border-y border-white/10 section-fade-in">
+            <div class="container mx-auto px-4 text-center">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 id="downloads" class="text-3xl md:text-4xl font-bold gradient-text mb-2">12680+</h3>
+                        <p class="text-white/60">Active Users</p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 id="downloads" class="text-3xl md:text-4xl font-bold gradient-text mb-2">800+</h3>
+                        <p class="text-white/60">App Downloads</p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-2">500+</h3>
+                        <p class="text-white/60">Properties Listed</p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-2">15</h3>
+                        <p class="text-white/60">Localities</p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-2">₹20</h3>
+                        <p class="text-white/60">Lowest Commission Fees</p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-2"> 0% Tax</h3>
+                        <p class="text-white/60">No Tax Above 30 days  </p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-2">40%+</h3>
+                        <p class="text-white/60">Discount above 60 days</p>
+                    </div>
+                    <div class="opacity-0 scale-90 transition-all duration-700">
+                        <h3 class="text-3xl md:text-4xl font-bold gradient-text mb-2">24/7</h3>
+                        <p class="text-white/60">Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        
+        <script>
+
+const statsSection = document.querySelectorAll('#stats .opacity-0');
+
+const observer = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0.2', 'scale-20');
+                entry.target.classList.add('opacity-100', 'scale-100');
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+
+statsSection.forEach(stat => observer.observe(stat));
+
+
+
+            // Dynamic Counter for Downloads
+            function animateCounter(id, start, end, duration) {
+                let element = document.getElementById(id);
+                let range = end - start;
+                let current = start;
+                let increment = range / (duration / 50); // update every 50ms
+                let timer = setInterval(() => {
+                    current += increment;
+                    if (current >= end) {
+                        current = end;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current) + "+";
+                }, 50);
+            }
+
+            // Start the animation when the page loads
+            document.addEventListener("DOMContentLoaded", () => {
+                animateCounter("downloads", 2670, 2311500, 500000000); // Start at 400, end at 500 in 2 seconds
+            });
+        </script>
+
+
+
+
+        <!-- Features Section -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const elements = document.querySelectorAll('.blur-to-visible');
+        
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.2 });
+        
+                elements.forEach((el) => observer.observe(el));
+            });
+        </script>
+        
+
+        <section id="features" class="py-20 section-fade-in blur-to-visible">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">
+                    Powerful <span class="gradient-text">Features</span>
+                  </h2>
+                  <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition hover:-translate-y-1">
+                      <i class="bi bi-camera-video text-4xl gradient-text mb-4"></i>
+                      <h3 class="text-xl font-bold mb-4">Virtual Tours</h3>
+                      <p class="text-white/60">Experience properties in immersive 3D virtual reality from anywhere in the world.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition hover:-translate-y-1">
+                        <i class="bi bi-graph-up text-4xl gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Commission</h3>
+                        <p class="text-white/60"> Lowest Fees 0.20% or 20Rs lowest will be applicable</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition hover:-translate-y-1">
+                        <i class="bi bi-phone text-4xl gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">AR Visualization</h3>
+                        <p class="text-white/60">Use augmented reality to visualize interior and external views in real-time.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition hover:-translate-y-1">
+                        <i class="bi bi-graph-up text-4xl gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Analytics</h3>
+                        <p class="text-white/60">Detailed analytics and insights about property views and user engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- About Team Section -->
+        <section id="team" class="py-20 section-fade-in blur-to-visible">
+            <div class="container mx-auto px-5">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">
+                    Meet the <span class="gradient-text">Team</span>
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 p-8 rounded-2xl text-center hover:bg-white/10 transition hover:-translate-y-1">
+                        <img src="https://img-c.udemycdn.com/user/200_H/220264962_374b_11.jpg" alt="Team Member 1" class="w-32 h-32 mx-auto rounded-full mb-6">
+                        <h3 class="text-xl font-bold mb-2">Shashank Desai</h3>
+                        <p class="text-sm text-white/60 mb-4">CEO & Founder</p>
+                        <p class="text-white/60">Visionary leader and innovator with a passion for technology and real estate.</p>
+                    </div>
+
+                    <div class="bg-white/5 p-8 rounded-2xl text-center hover:bg-white/10 transition hover:-translate-y-1">
+                        <img src="data:image/jpeg;base64,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" alt="Team Member 2" class="w-32 h-32 mx-auto rounded-full mb-6">
+                        <h3 class="text-xl font-bold mb-2">Vaidehi Nanivadekar</h3>
+                        <p class="text-sm text-white/60 mb-4">Operation & Presentation Head </p>
+                        <p class="text-white/60">Crafting impactful campaigns to bring our vision to the world.</p>
+                    </div>
+
+                    <div class="bg-white/5 p-8 rounded-2xl text-center hover:bg-white/10 transition hover:-translate-y-1">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQEa4351Qt6QTA/profile-displayphoto-shrink_800_800/B4EZPV14J8HkAc-/0/1734459491459?e=1740009600&v=beta&t=XreSAAchamRXB_HKKFp5vYWUwZSjQ-9WQtv-gRs-RzQ" alt="Team Member 3" class="w-32 h-32 mx-auto rounded-full mb-6">
+                        <h3 class="text-xl font-bold mb-2">Aditya Vengurlekar</h3>
+                        <p class="text-sm text-white/60 mb-4">CTO Application </p>
+                        <p class="text-white/60">Technology enthusiast driving innovation in AR/VR experiences.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl text-center hover:bg-white/10 transition hover:-translate-y-1">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQEa4351Qt6QTA/profile-displayphoto-shrink_800_800/B4EZPV14J8HkAc-/0/1734459491459?e=1740009600&v=beta&t=XreSAAchamRXB_HKKFp5vYWUwZSjQ-9WQtv-gRs-RzQ" alt="Team Member 3" class="w-32 h-32 mx-auto rounded-full mb-6">
+                        <h3 class="text-xl font-bold mb-2">Chinmay Katdare </h3>
+                        <p class="text-sm text-white/60 mb-4">CTO Application </p>
+                        <p class="text-white/60">Technology enthusiast driving innovation in AR/VR experiences.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-2xl text-center hover:bg-white/10 transition hover:-translate-y-1">
+                        <img src="data:image/jpeg;base64,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" alt="Team Member 3" class="w-32 h-32 mx-auto rounded-full mb-6">
+                        <h3 class="text-xl font-bold mb-2">Ms. Sonalii Suryawanshi </h3>
+                        <p class="text-sm text-white/60 mb-4">Project Manager / Mentor</p>
+                        <p class="text-white/60">Technology enthusiast driving innovation in AR/VR experiences.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- CTA Section -->
+        <section class="py-20 hero-gradient text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">
+                    Ready to Transform Your Real Estate Experience?
+                </h2>
+                <button class="bg-gradient-to-r from-[#00FFA3] to-[#03E1FF] text-black px-8 py-3 rounded-full font-medium hover:opacity-90 transition text-lg">
+                    Get Started Now
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/10 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold gradient-text mb-4">Real Estate Immersion</h3>
+            <p class="text-white/60 mb-8">The future of real estate exploration is here.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-white/60 hover:text-white transition text-xl"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white/60 hover:text-white transition text-xl"><i class="bi bi-discord"></i></a>
+                <a href="#" class="text-white/60 hover:text-white transition text-xl"><i class="bi bi-github"></i></a>
+            </div>
+            <p class="mt-8 text-white/60">© 2024 Real Estate Immersion. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.bi-list').addEventListener('click', function () {
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-[#02041A] z-50 flex flex-col items-center justify-center space-y-6';
+            mobileMenu.innerHTML = `
+                <button class="absolute top-4 right-4 text-3xl text-white"><i class="bi bi-x"></i></button>
+                <a href="#features" class="text-xl text-white">Features</a>
+                <a href="#showcase" class="text-xl text-white">Prototype</a>
+                <button class="bg-gradient-to-r from-[#00FFA3] to-[#03E1FF] text-black px-6 py-2 rounded-full font-medium">
+                    Launch App
+                </button>
+            `;
+            document.body.appendChild(mobileMenu);
+
+            mobileMenu.querySelector('.bi-x').addEventListener('click', () => mobileMenu.remove());
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

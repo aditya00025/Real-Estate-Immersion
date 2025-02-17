@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General styling for a clean and modern look */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(135deg, #f4f4f9 0%, #e0e0e0 100%);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        /* Container for both charts */
+        .charts-container {
+            display: flex;
+            justify-content: space-between; /* Ensure space between charts */
+            width: 90%; /* Adjust width according to screen size */
+            max-width: 1200px; /* Maximum width */
+        }
+
+        /* Canvas container for responsiveness */
+        .chart-container {
+            position: relative;
+            width: 48%; /* Two charts side by side */
+            max-width: 600px; /* Limit max width for each chart */
+            margin: 10px; /* Space between charts */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            background-color: white; /* White background for the chart container */
+            padding: 20px; /* Padding inside the chart container */
+        }
+
+        /* Responsive styling */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .ts-container {
+                flex-direction: column; /* Stack charts in a column on mobile */
+                align-items: center; /* Center align items */
+            }
+
+            .chart-container {
+                width: 100%; /* Full width for mobile view */
+                max-width: none; /* Remove max width for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization</h1>
+    
+    <!-- Container for both charts -->
+    <div class="charts-container">
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="myChart2"></canvas>
+        </div>
+    </div>
+
+    <script src="data.js"></script> <!-- Link to your dataset script -->
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: dataset.labels,
+                datasets: [{
+                    label: 'Hotel Star Ratings',
+                    data: dataset.hotelStars,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(153, 102, 255, 0.8)',
+                        'rgba(255, 159, 64, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                animation: {
+                    duration: 1000,
+                    easing: 'easeInOutBounce',
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: dataset.labels,
+                datasets: [{
+                    label: 'Review Ratings',
+                    data: dataset.reviewRating,
+                    backgroundColor: [
+                        'rgba(255, 206, 86, 0.8)',
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(153, 102, 255, 0.8)',
+                        'rgba(255, 159, 64, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 1000,
+                    easing: 'easeInOutBounce',
+                }
+            }
+        });
+    </script>
+</body>
+</html>
